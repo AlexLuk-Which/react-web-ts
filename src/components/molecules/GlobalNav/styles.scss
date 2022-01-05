@@ -1,0 +1,89 @@
+@import '../../shared/global.scss';
+
+.navContainer {
+  background-color: $turq-dark-0;
+  padding: 20px $gutter-spacing;
+}
+
+.navInner {
+  @include center-inner-container;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.bannerLogo {
+  // background: pink;
+  background: url('https://dwkujuq9vpuly.cloudfront.net/news/wp-content/uploads/2020/03/Driving_during_lockdown_main-175x105.jpg')
+    no-repeat;
+  background-size: contain;
+  height: $globalNav-height;
+  flex-basis: 20%;
+  align-self: center;
+}
+
+.iconsWrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  align-self: center;
+
+  @include screen-size(large-up) {
+    order: 3;
+  }
+}
+
+.icon {
+  cursor: pointer;
+  width: $globalNav-height;
+  height: $globalNav-height;
+  margin-left: 20px;
+
+  border: white 2px solid;
+  border-radius: 15px;
+}
+
+.fb {
+  // background: yellow;
+  background: url('../../../assets/fb.png') no-repeat;
+  background-size: contain;
+}
+
+.youtube {
+  // background: yellow;
+  background: url('../../../assets/youtube.png') no-repeat;
+  background-size: contain;
+}
+
+.linkedin {
+  // background: green;
+  background: url('../../../assets/linkedin.png') no-repeat;
+  background-size: contain;
+}
+
+.mobileToggle {
+  background: red;
+  @include screen-size(large-up) {
+    display: none;
+  }
+}
+
+.navItemsWrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-end;
+  align-self: center;
+  flex-basis: 100%;
+
+  @include screen-size(large-up) {
+    flex-basis: auto;
+    flex-flow: row nowrap;
+    flex-grow: 1;
+    order: 2;
+  }
+}
+
+.hideDeviceOnly {
+  @include screen-size(medium-down) {
+    display: none;
+  }
+}

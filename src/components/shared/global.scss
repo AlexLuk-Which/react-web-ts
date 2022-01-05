@@ -1,0 +1,32 @@
+@import './colours.scss';
+@import './spacing.scss';
+@import './breakpoints.scss';
+@import './utils.scss';
+@import './fonts.scss';
+
+$globalNav-height: 50px;
+$globalNav-hover-bottom-border: 5px; // Desktop + Wide Desktop
+$globalNav-hover-left-border: 10px; //Mobile + Tablet
+$globalNav-total-height: calc(
+  $globalNav-height + $globalNav-hover-bottom-border
+);
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  @include screen-size(small) {
+    background-color: $grey-2;
+  }
+
+  @include screen-size(medium) {
+    background-color: $grey-1;
+  }
+
+  @include screen-size(large-up) {
+    background-color: $turq-0;
+  }
+}

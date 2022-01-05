@@ -1,0 +1,72 @@
+@import '../../shared/global.scss';
+
+// .navTabContainer {
+//   display: inline-block;
+//   background-color: $grey-2;
+//   min-width: 150px;
+
+//   border-bottom: $globalNav-hover-bottom-border solid transparent;
+//   transition: all 0.5s ease 0s;
+
+//   @include screen-size(large-up) {
+//     background-color: $turq-1;
+//   }
+
+//   &:hover {
+//     border-bottom-color: #00acc1;
+//   }
+
+//   & > p {
+//     @include font-lato-bold;
+//     font-size: 18px;
+//     line-height: $globalNav-height;
+//     text-align: center;
+//     color: $turq-blue-2;
+//   }
+// }
+
+.navTabWidth4 {
+  flex-basis: 15%;
+}
+.navTabWidth6 {
+  flex-basis: 12%;
+}
+.navTabWidth8 {
+  flex-basis: 10%;
+}
+.navTabWidth10 {
+  flex-basis: 8%;
+}
+
+.navItems {
+  width: 100%;
+  border-left: $globalNav-hover-left-border solid transparent;
+  transition: all 0.5s ease 0s;
+
+  &:hover {
+    border-left-color: #00acc1;
+  }
+
+  & > p {
+    @include font-lato-bold;
+    font-size: 18px;
+    line-height: $globalNav-height;
+    text-align: center;
+    color: $white-1;
+    padding: 0 5px;
+
+    & > a {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+
+  @include screen-size(large-up) {
+    border: 0;
+    border-bottom: $globalNav-hover-bottom-border solid transparent;
+
+    &:hover {
+      border-bottom-color: #00acc1;
+    }
+  }
+}

@@ -1,0 +1,52 @@
+$small: 480px; //Mobile
+$medium: 768px; //Tablet
+$large: 1024px; //Desktop
+$xlarge: 1270px; //Wide Desktop
+
+@mixin screen-size($media) {
+  @if $media == xsmall {
+    @media only screen and (max-width: $small - 1) {
+      @content;
+    }
+  } @else if $media == small {
+    @media only screen and (min-width: $small) and (max-width: $medium - 1) {
+      @content;
+    }
+  } @else if $media == medium {
+    @media only screen and (min-width: $medium) and (max-width: $large - 1) {
+      @content;
+    }
+  } @else if $media == large {
+    @media only screen and (min-width: $large) and (max-width: $xlarge - 1) {
+      @content;
+    }
+  } @else if $media == xlarge {
+    @media only screen and (min-width: $xlarge) {
+      @content;
+    }
+  } @else if $media == small-up {
+    @media only screen and (min-width: $small) {
+      @content;
+    }
+  } @else if $media == medium-up {
+    @media only screen and (min-width: $medium) {
+      @content;
+    }
+  } @else if $media == large-up {
+    @media only screen and (min-width: $large) {
+      @content;
+    }
+  } @else if $media == small-down {
+    @media only screen and (max-width: $medium - 1) {
+      @content;
+    }
+  } @else if $media == medium-down {
+    @media only screen and (max-width: $large - 1) {
+      @content;
+    }
+  } @else if $media == large-down {
+    @media only screen and (max-width: $xlarge - 1) {
+      @content;
+    }
+  }
+}

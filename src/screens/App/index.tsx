@@ -1,14 +1,29 @@
+import GlobalNav from '../../components/molecules/GlobalNav'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Home from '../Home/'
+import About from '../About/'
+import Hobby from '../Hobby'
+import Error from '../Error/'
+
 import './styles.scss'
-import IMAGE from '../../assets/TTCoach.png'
-import Logo from '../../assets/logo.svg'
 
 export const App = () => {
   return (
-    <>
-      <h1>React Typescript! Hello World!</h1>
-      <h2>{`${[process.env.BUILD_MODE]}`}</h2>
-      <img src={IMAGE} alt="React logo" width="300" height="300" />
-      <img src={Logo} alt="React logo" width="300" />
-    </>
+    // <>
+    //   <h1>React Typescript! Hello World!</h1>
+    //   <h2>{`${[process.env.BUILD_MODE]}`}</h2>
+    //
+    // </>
+    <div className={'mainBackground'}>
+      <BrowserRouter>
+        <GlobalNav />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/hobby" element={<Hobby />} />
+          <Route path="*" element={<Error />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
   )
 }
