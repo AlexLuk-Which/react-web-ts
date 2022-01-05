@@ -1,0 +1,9 @@
+@import '../../components/shared/global.scss';
+
+.homeContainer {
+  padding: $spacing-5 $gutter-spacing 0;
+}
+
+.homeInnerContainer {
+  @include center-inner-container;
+}
