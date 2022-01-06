@@ -1,6 +1,8 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
+// const localIdentName = process.env.NODE_ENV === 'prod' ? '[hash:base64:5]' : '[name]__[local]__[hash:base64:3]'
+console.log('common.js: ', process.env.NODE_ENV)
 module.exports = {
   entry: path.resolve(__dirname, '..', './src/index.tsx'),
   resolve: {
@@ -16,10 +18,6 @@ module.exports = {
             loader: 'babel-loader',
           },
         ],
-      },
-      {
-        test: /\.s[ac]ss$/i,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
         test: /\.(?:ico|gif|png|jpg|jpeg)$/i,

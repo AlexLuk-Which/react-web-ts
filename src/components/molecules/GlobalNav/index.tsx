@@ -2,9 +2,12 @@
 import React, { useState } from 'react'
 import classNames from 'classnames'
 import NavTab from '../../atoms/NavTab/'
-import './styles.scss'
+import styles from './styles.scss'
 import { useNavigate } from 'react-router-dom'
 import Image from '../../atoms/Image'
+import brandLogo from '../../../assets/svg/logo-turq.svg'
+import Button from '../../atoms/Button'
+import Search from '../../../assets/svg/navigation/search'
 
 const tabList = [
   { title: 'About', extension: '/about' },
@@ -28,39 +31,54 @@ const setClassWidth = (value: number) => {
 const classWidth = setClassWidth(tabList.length)
 
 const GlobalNav = () => {
+  const navigate = useNavigate()
   const [mobileToggle, setMobileToggle] = useState(true)
   const handleMobileToggle = () => setMobileToggle(!mobileToggle)
-  const navigate = useNavigate()
+
   const handleBannerLogo = () => navigate('/', { replace: true }) //Back to home page
 
   return (
-    <nav className={'navContainer'}>
-      <div className={'navInner'}>
-        <div className={'bannerLogo'}>
+    <nav className={styles.navContainer}>
+      <div className={styles.navInner}>
+        <div className={styles.bannerLogo}>
           <Image
-            src="https://dwkujuq9vpuly.cloudfront.net/news/wp-content/uploads/2020/03/Driving_during_lockdown_main-175x105.jpg"
+            src={brandLogo}
             alt="Banner Logo"
-            width="150"
             height="50"
             onClick={handleBannerLogo}
           />
         </div>
-        <div className={'iconsWrapper'}>
-          <div className={classNames('icon', 'fb')} />
-          <div className={classNames('icon', 'youtube')} />
-          <div className={classNames('icon', 'linkedin')} />
-          <button
-            className={classNames('icon', 'mobileToggle')}
+        <div className={styles.iconsWrapper}>
+          <Button
+            className={classNames(styles.icon, styles.fb)}
+            onClick={() =>
+              (window.location.href = 'https://www.facebook.com/alexcbluk')
+            }
+          />
+          <Button
+            className={classNames(styles.icon, styles.youtube)}
+            onClick={() =>
+              (window.location.href =
+                'https://www.youtube.com/channel/UCOeVJ7RgcBHmu1yUZWz0BIQ')
+            }
+          />
+          <Button
+            className={classNames(styles.icon, styles.linkedin)}
+            onClick={() =>
+              (window.location.href = 'https://www.linkedin.com/in/alexcbluk/')
+            }
+          />
+          <Button
+            className={classNames(styles.icon, styles.mobileToggle)}
             onClick={handleMobileToggle}
-            tabIndex={0}
           >
-            Toggle
-          </button>
+            <Search />
+          </Button>
         </div>
         <div
           className={classNames(
-            'navItemsWrapper',
-            mobileToggle && 'hideDeviceOnly'
+            styles.navItemsWrapper,
+            mobileToggle && styles.hideDeviceOnly
           )}
         >
           {tabList.map(({ title, extension }) => (

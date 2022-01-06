@@ -1,12 +1,12 @@
 import IMAGE from '../../assets/TTCoach.png'
 import Logo from '../../assets/logo.svg'
 import type { ReactElement } from 'react'
-import './styles.scss'
+import styles from './styles.scss'
 
 export default function Home(): ReactElement {
   return (
-    <section className={'homeContainer'}>
-      <div className={'homeInnerContainer'}>
+    <section className={styles.homeContainer}>
+      <div className={styles.homeInnerContainer}>
         <h1>Hello Website </h1>
         <div>
           <p>

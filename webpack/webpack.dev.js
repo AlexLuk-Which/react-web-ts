@@ -16,4 +16,19 @@ module.exports = {
       path: '.env.dev'
     }),
   ],
+  module: {
+    rules: [
+      {
+        test: /\.s[ac]ss$/i,        
+        use: ['style-loader', {
+          loader: 'css-loader',
+          options: {
+              modules: {
+                localIdentName: '[name]__[local]__[hash:base64:3]',
+              }
+          }
+        }, 'sass-loader'],
+      }
+    ],
+  },
 }
