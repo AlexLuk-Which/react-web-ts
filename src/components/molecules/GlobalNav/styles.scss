@@ -1,4 +1,4 @@
-@import '../../shared/global.scss';
+@import '../../shared/styles/global.scss';
 
 .navContainer {
   background-color: $turq-dark-0;
@@ -14,9 +14,9 @@
 
 .bannerLogo {
   // background: pink;
-  background: url('https://dwkujuq9vpuly.cloudfront.net/news/wp-content/uploads/2020/03/Driving_during_lockdown_main-175x105.jpg')
-    no-repeat;
-  background-size: contain;
+  // background: url('https://dwkujuq9vpuly.cloudfront.net/news/wp-content/uploads/2020/03/Driving_during_lockdown_main-175x105.jpg')
+  //   no-repeat;
+  // background-size: contain;
   height: $globalNav-height;
   flex-basis: 20%;
   align-self: center;
@@ -61,7 +61,7 @@
 }
 
 .mobileToggle {
-  background: red;
+  // background: red;
   @include screen-size(large-up) {
     display: none;
   }
